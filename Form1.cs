@@ -48,8 +48,8 @@ namespace Lesson_2
         delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
 
         [DllImport("user32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool EnumWindows(EnumWindowsProc lpEnumFunc, IntPtr lParam);
+        [return: MarshalAs(UnmanagedType.Bool)] //используеится для преобразования типа данных
+        static extern bool EnumWindows(EnumWindowsProc lpEnumFunc, IntPtr lParam); // 
 
         [DllImport("user32.dll", SetLastError = true)]
         static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
@@ -82,14 +82,14 @@ namespace Lesson_2
                 if (IsWindowVisible(hWnd) && GetWindowTextLength(hWnd) != 0)
                 {
                     windows_list.Add(GetWindowText(hWnd));
-                    Windows_s.Text = windows_list.ToString();
+                    Windows_s.Text = GetWindowText(hWnd);
                 }
                 return true;
             }, IntPtr.Zero);
 
 
         }
-        string GetWindowText(IntPtr hWnd)
+        string GetWindowText(IntPtr hWnd) // метод преобразует bool to string чтобы вывести в текс бокс
         {
             int len = GetWindowTextLength(hWnd) + 1;
             StringBuilder sb = new StringBuilder(len);
