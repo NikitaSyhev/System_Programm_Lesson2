@@ -32,6 +32,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.WinName = new System.Windows.Forms.TextBox();
             this.NewCaption = new System.Windows.Forms.TextBox();
+            this.Windows_s = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -68,11 +70,31 @@
             this.NewCaption.Size = new System.Drawing.Size(148, 26);
             this.NewCaption.TabIndex = 3;
             // 
+            // Windows_s
+            // 
+            this.Windows_s.Location = new System.Drawing.Point(496, 186);
+            this.Windows_s.Multiline = true;
+            this.Windows_s.Name = "Windows_s";
+            this.Windows_s.Size = new System.Drawing.Size(148, 194);
+            this.Windows_s.TabIndex = 4;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(496, 147);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(158, 33);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Windows_s);
             this.Controls.Add(this.NewCaption);
             this.Controls.Add(this.WinName);
             this.Controls.Add(this.button2);
@@ -90,6 +112,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox WinName;
         private System.Windows.Forms.TextBox NewCaption;
+        private System.Windows.Forms.TextBox Windows_s;
+        private System.Windows.Forms.Button button3;
     }
 }
 
